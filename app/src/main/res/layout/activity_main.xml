@@ -9,17 +9,18 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCadastrarFesta"
+        style="@style/Botao_tela_principal"
+        android:onClick="cadastrarFesta"
         android:text="Fazer minha festa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.36"
-        style="@style/Botao_tela_principal" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.44" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnOferecerServico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -27,16 +28,17 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:background="@drawable/bg_button_customizado1"
+        android:onClick="cadastrarEmpresa"
         android:text="Oferecer serviços/Produtos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.61" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnVideoExplicativo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
