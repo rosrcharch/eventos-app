@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Festas e Eventos</string>
+    <string name="stringBtnFesta">Fazer minha festa</string>
+    <string name="stringBtnOferecerServico">Oferecer serviços/Produtos</string>
+    <string name="stringBtnVideo">Vídeo explicativo</string>
+    <string name="stringDescricao">Imagem de fundo</string>
+    <string name="stringTextoPrincipal">Olá</string>
+    <string name="stringTextoPrincipal2">O que você deseja?</string>
 </resources>
