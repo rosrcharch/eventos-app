@@ -6,4 +6,5 @@
     <string name="stringDescricao">Imagem de fundo</string>
     <string name="stringTextoPrincipal">Olá</string>
     <string name="stringTextoPrincipal2">O que você deseja?</string>
+    <string name="menu_cadastrar">Cadastrar</string>
 </resources>
