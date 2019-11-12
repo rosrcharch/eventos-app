@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:duplicateParentState="false"
     android:focusableInTouchMode="false"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <Button
         android:id="@+id/btnCadastrarFesta"
@@ -36,6 +36,7 @@
     <Button
         android:id="@+id/btnVideoExplicativo"
         style="@style/Botao_tela_principal"
+        android:layout_marginBottom="26dp"
         android:background="@drawable/bg_button_customizado1"
         android:text="@string/stringBtnVideo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/banner" />
+        app:srcCompat="@drawable/eventos_banner" />
 
 
     <TextView

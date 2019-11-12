@@ -1,8 +1,10 @@
-package com.example.festaseeventos;
+package com.example.festaseeventos.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.festaseeventos.R;
 
 public class TelaOferecerServico extends AppCompatActivity {
 

@@ -1,11 +1,16 @@
-package com.example.festaseeventos;
+package com.example.festaseeventos.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+
+import com.example.festaseeventos.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
         btnCadastrarFesta = findViewById(R.id.btnCadastrarFesta);
         btnCadastrarEmpresa = findViewById(R.id.btnOferecerServico);
+
+        //Configuração da statusBar translucida
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow(); // in Activity's onCreate() for instance
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
     }
 
 

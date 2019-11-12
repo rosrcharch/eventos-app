@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/menu_cadastrar"
-        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:icon="@drawable/ic_cadastrar4"
         android:title="@string/menu_cadastrar"
         app:showAsAction="always" />
 
