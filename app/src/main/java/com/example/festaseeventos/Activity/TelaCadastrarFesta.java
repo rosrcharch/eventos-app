@@ -1,7 +1,10 @@
 package com.example.festaseeventos.Activity;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.ListFragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -10,6 +13,7 @@ import android.view.Menu;
 
 import com.example.festaseeventos.Activity.Fragments.EscolhaFragment;
 import com.example.festaseeventos.Activity.Fragments.InformacoesFragment;
+import com.example.festaseeventos.Activity.Fragments.ListaFragment;
 import com.example.festaseeventos.R;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
@@ -41,12 +45,16 @@ public class TelaCadastrarFesta extends AppCompatActivity {
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(this)
                 .add("Informações", InformacoesFragment.class)
-                .add("Lista", ListFragment.class)
+                .add("Lista", ListaFragment.class)
                 .add("Escolha", EscolhaFragment.class)
                 .create()
         );
         viewPager.setAdapter( adapter );
         smartTabLayout.setViewPager( viewPager );
+
+        //Configuração da scrollview
+        NestedScrollView scrollView = findViewById (R.id.nested_scroll_view);
+        scrollView.setFillViewport (true);
 
     }
 
