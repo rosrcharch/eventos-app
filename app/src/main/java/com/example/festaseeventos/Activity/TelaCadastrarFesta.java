@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.core.widget.NestedScrollView;
-import androidx.fragment.app.ListFragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -24,6 +23,12 @@ public class TelaCadastrarFesta extends AppCompatActivity {
     private Toolbar toolbar;
     private ViewPager viewPager;
     private SmartTabLayout smartTabLayout;
+
+    public String[] cardViewNome = new String[] {"Festa de aniversario", "Bodas", "Datas comemorativas",
+            "Casamento", "Corporativa", "Debutante", "Escolar", "Outros"};
+
+    public int[] cardViewImg = {R.drawable.aniversario, R.drawable.bodas, R.drawable.datas_comemorativas,
+            R.drawable.casamento, R.drawable.corporativa, R.drawable.debutante, R.drawable.escolar, R.drawable.outros};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +56,6 @@ public class TelaCadastrarFesta extends AppCompatActivity {
         );
         viewPager.setAdapter( adapter );
         smartTabLayout.setViewPager( viewPager );
-
-        //Configuração da scrollview
-        NestedScrollView scrollView = findViewById (R.id.nested_scroll_view);
-        scrollView.setFillViewport (true);
 
     }
 
