@@ -35,6 +35,7 @@ public class TelaCadastrarFesta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_festa);
 
+        //Configurando a Toolbar
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Minha Festa");
         setSupportActionBar(toolbar);
@@ -45,7 +46,6 @@ public class TelaCadastrarFesta extends AppCompatActivity {
         smartTabLayout = findViewById(R.id.viewPagertab);
 
         //Configuração as abas da tela Cadastrar Festas
-
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(this)

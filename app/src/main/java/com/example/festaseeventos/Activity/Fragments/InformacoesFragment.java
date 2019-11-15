@@ -16,18 +16,14 @@ import com.example.festaseeventos.R;
 
 public class InformacoesFragment extends Fragment {
 
-    private Spinner informacoesSpinner;
-    private ImageView informacoesImagens;
-
-    public String[] cardViewNome = new String[] {"Festa de aniversario", "Bodas", "Datas comemorativas",
+    private String[] cardViewNome = new String[] {"Festa de aniversario", "Bodas", "Datas comemorativas",
     "Casamento", "Corporativa", "Debutante", "Escolar", "Outros"};
 
-    public int[] cardViewImg = {R.drawable.aniversario, R.drawable.bodas, R.drawable.datas_comemorativas,
+    private int[] cardViewImg = {R.drawable.aniversario, R.drawable.bodas, R.drawable.datas_comemorativas,
      R.drawable.casamento, R.drawable.corporativa, R.drawable.debutante, R.drawable.escolar, R.drawable.outros};
 
-
+    // Required empty public constructor
     public InformacoesFragment() {
-        // Required empty public constructor
     }
 
 
@@ -35,12 +31,14 @@ public class InformacoesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //Configuração do spinner do layout
-        informacoesSpinner = container.findViewById(R.id.spinner_categoria);
+        View view = inflater.inflate(R.layout.fragment_informacoes, container, false);
 
         //Configurando o adapter e a listagem dos itens
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, cardViewNome);
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, cardViewNome);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //Configuração do spinner do layout
+        Spinner informacoesSpinner = view.findViewById(R.id.spinner_categoria);
         informacoesSpinner.setAdapter(adapter);
 
 
@@ -57,7 +55,7 @@ public class InformacoesFragment extends Fragment {
         });
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_informacoes, container, false);
+        return view;
 
     }
 
