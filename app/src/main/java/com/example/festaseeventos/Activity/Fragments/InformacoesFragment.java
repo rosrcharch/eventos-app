@@ -34,7 +34,7 @@ public class InformacoesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_informacoes, container, false);
 
         //Configurando o adapter e a listagem dos itens
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, cardViewNome);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, cardViewNome);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         //Configuração do spinner do layout
