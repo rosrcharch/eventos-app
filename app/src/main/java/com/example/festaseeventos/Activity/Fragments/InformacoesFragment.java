@@ -6,24 +6,37 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import com.example.festaseeventos.R;
 
 public class InformacoesFragment extends Fragment {
 
+    private EditText editLocalFesta;
+    private EditText editData;
+    private EditText editNumConvidados;
+    private RatingBar classificacaoFesta;
+
     private String[] cardViewNome = new String[] {"Festa de aniversario", "Bodas", "Datas comemorativas",
     "Casamento", "Corporativa", "Debutante", "Escolar", "Outros"};
 
-    private int[] cardViewImg = {R.drawable.aniversario, R.drawable.bodas, R.drawable.datas_comemorativas,
-     R.drawable.casamento, R.drawable.corporativa, R.drawable.debutante, R.drawable.escolar, R.drawable.outros};
 
     // Required empty public constructor
     public InformacoesFragment() {
+
     }
 
 
@@ -32,6 +45,12 @@ public class InformacoesFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_informacoes, container, false);
+
+
+        editLocalFesta = view.findViewById(R.id.edit_local_festa);
+        editData = view.findViewById(R.id.edit_data);
+        editNumConvidados = view.findViewById(R.id.edit_num_convidados);
+        classificacaoFesta = view.findViewById(R.id.classificacao_festa);
 
         //Configurando o adapter e a listagem dos itens
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, cardViewNome);
@@ -54,10 +73,16 @@ public class InformacoesFragment extends Fragment {
             }
         });
 
+        editLocalFesta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "toque", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         // Inflate the layout for this fragment
         return view;
 
     }
-
 
 }

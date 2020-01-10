@@ -1,4 +1,4 @@
-package com.example.festaseeventos.Activity;
+package com.example.festaseeventos.Activity.Activity;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.example.festaseeventos.Activity.Fragments.EscolhaFragment;
 import com.example.festaseeventos.Activity.Fragments.InformacoesFragment;
@@ -62,7 +64,18 @@ public class TelaCadastrarFesta extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
+
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         return super.onCreateOptionsMenu(menu);
+/*
+        super.onCreateOptionsMenu(menu);
+        MenuItem m1 = menu.add(R.menu.toolbar_menu, 0, 0, "menu 1");
+        m1.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+        MenuItem m2 = menu.add(R.menu.convidados_menu, 0, 0, "menu convidados");
+        m2.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+
+        return super.onCreateOptionsMenu(menu);*/
     }
+
 }

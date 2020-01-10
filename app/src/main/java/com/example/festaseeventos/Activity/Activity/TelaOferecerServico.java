@@ -1,4 +1,4 @@
-package com.example.festaseeventos.Activity;
+package com.example.festaseeventos.Activity.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context=".Activity.TelaCadastrarFesta">
+    tools:context=".Activity.Activity.TelaCadastrarFesta">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"

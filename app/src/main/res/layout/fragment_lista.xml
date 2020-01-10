@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Fragments.InformacoesFragment">
+    tools:context=".Activity.Fragments.InformacoesFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
+         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="lista"
-        android:textSize="36sp" />
+        android:layout_height="50dp">
 
-</FrameLayout>
+
+        <EditText
+            android:id="@+id/textAdicionar"
+            android:drawableTint="@color/colorPrimary"
+            android:background="@drawable/tela_de_pesquisa"
+            android:layout_margin="8dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="30dp"/>
+
+
+        <ImageView
+            android:id="@+id/imageAdicionar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:src="@drawable/ic_add_24dp" />
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
