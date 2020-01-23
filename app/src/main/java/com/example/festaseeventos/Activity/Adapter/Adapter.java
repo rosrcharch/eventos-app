@@ -48,15 +48,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView convidados;
-        ImageView imageConvidados;
 
         public MyViewHolder( View itemView) {
             super(itemView);
 
             convidados = itemView.findViewById(R.id.textViewConvidado);
-/*
-            imageConvidados = itemView.findViewById(R.id.imageViewConvidado);
-*/
+
         }
     }
 }

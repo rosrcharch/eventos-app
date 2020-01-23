@@ -4,7 +4,6 @@ package com.example.festaseeventos.Activity.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,8 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import com.example.festaseeventos.Activity.Adapter.Adapter;
 import com.example.festaseeventos.Activity.Model.Convidado;
@@ -30,7 +27,7 @@ public class ListaFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private List<Convidado> listaConvidados = new ArrayList<>();
+    private List<Convidado> listaServicos = new ArrayList<>();
     private EditText testoAdicionar;
     private ImageView imagemAdicionar;
 
@@ -51,7 +48,7 @@ public class ListaFragment extends Fragment {
         recyclerView = view.findViewById(R.id.lista_recycler);
 
         //Configurar a lista de convidados
-        this.criarConvidados();
+        this.criarServicos();
 
 
         //tamanho da lista inalteravel pelo seu conteudo
@@ -66,7 +63,7 @@ public class ListaFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         // Configurr o Adapter
-        Adapter adapter = new Adapter(listaConvidados);
+        Adapter adapter = new Adapter(listaServicos);
         recyclerView.setAdapter( adapter );
 
         setHasOptionsMenu(true);
@@ -75,55 +72,55 @@ public class ListaFragment extends Fragment {
         return view;
     }
 
-    public void criarConvidados(){
+    public void criarServicos(){
 
         Convidado convidado = new Convidado("Bebidas");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Decoração");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Comidas");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Convites");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Garçon");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("DJ");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Filmagem");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Recreação");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Brinquedos");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Mágico");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Recepsionista");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Retrospectiva");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Segurança");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Stand up");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Cantor/Banda");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
 
         convidado = new Convidado("Karaokê");
-        this.listaConvidados.add(convidado);
+        this.listaServicos.add(convidado);
     }
 
 

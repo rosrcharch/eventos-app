@@ -29,8 +29,8 @@ public class TelaCadastrarFesta extends AppCompatActivity {
     public String[] cardViewNome = new String[] {"Festa de aniversario", "Bodas", "Datas comemorativas",
             "Casamento", "Corporativa", "Debutante", "Escolar", "Outros"};
 
-    public int[] cardViewImg = {R.drawable.aniversario, R.drawable.bodas, R.drawable.datas_comemorativas,
-            R.drawable.casamento, R.drawable.corporativa, R.drawable.debutante, R.drawable.escolar, R.drawable.outros};
+    //public int[] cardViewImg = {R.drawable.aniversario, R.drawable.bodas, R.drawable.datas_comemorativas,
+    // R.drawable.casamento, R.drawable.corporativa, R.drawable.debutante, R.drawable.escolar, R.drawable.outros};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
