@@ -1,15 +1,7 @@
 package com.example.festaseeventos.Activity.Fragments;
 
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,15 +10,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.festaseeventos.Activity.Model.Festa;
 import com.example.festaseeventos.Activity.Model.Mask;
 import com.example.festaseeventos.R;
-import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
 import java.text.SimpleDateFormat;
 

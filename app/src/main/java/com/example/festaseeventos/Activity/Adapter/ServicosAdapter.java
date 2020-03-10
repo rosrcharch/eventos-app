@@ -33,7 +33,6 @@ import java.util.List;
 public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyViewHolder> {
 
     public static List<Servicos> listaServiço;
-    public static Object MyViewHolder;
     private Context context;
     private RecyclerViewOnItemClick mRecyclerViewOnItemClick;
 
