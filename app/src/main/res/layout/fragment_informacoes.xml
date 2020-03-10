@@ -2,11 +2,15 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#EAECEE"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+
+
 <LinearLayout
+    android:background="#EAECEE"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -26,22 +30,28 @@
     <EditText
         android:id="@+id/edit_local_festa"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
+        android:autofillHints=""
+        android:background="@drawable/tela_de_pesquisa"
         android:ems="1"
+        android:gravity="center"
         android:hint="@string/local_da_festa"
-        android:inputType="textPersonName"
-        android:autofillHints="" />
+        android:inputType="textPassword"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edit_data"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textStyle="bold"
+        android:background="@drawable/tela_de_pesquisa"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
+        android:gravity="center"
         android:ems="10"
         android:hint="@string/data"
         android:inputType="date" />
@@ -49,10 +59,13 @@
     <EditText
         android:id="@+id/edit_num_convidados"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:textStyle="bold"
+        android:background="@drawable/tela_de_pesquisa"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
+        android:gravity="center"
         android:ems="10"
         android:hint="@string/quantidade_de_convidados"
         android:inputType="number" />
@@ -82,11 +95,13 @@
 
     <Button
         android:id="@+id/buttonCriarFesta"
+        style="@android:style/Widget.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:background="@drawable/bg_button_customizado1"
+        android:elevation="20dp"
         android:text="@string/ok" />
 
 

@@ -2,14 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.festaseeventos">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.Activity.SplashScreenActivity"></activity>
+        <activity android:name=".Activity.Main.MainActivity" />
         <activity
             android:name=".Activity.Activity.TelaOferecerServico"
             android:screenOrientation="portrait" />
@@ -17,7 +19,7 @@
             android:name=".Activity.Activity.TelaCadastrarFesta"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity.Activity.MainActivity"
+            android:name=".Activity.Splash.Splash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

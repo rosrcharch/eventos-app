@@ -16,7 +16,7 @@
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginEnd">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
-        <item name="android:background">@drawable/bg_button_customizado1</item>
+        <item name="background">@drawable/bg_button_customizado1</item>
     </style>
 
     <style name="Textos_padroes">

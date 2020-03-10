@@ -4,7 +4,7 @@
     >
 
     <corners
-        android:radius="70dp"
+        android:radius="70sp"
         />
 
     <solid

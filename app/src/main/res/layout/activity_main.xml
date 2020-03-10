@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:duplicateParentState="false"
     android:focusableInTouchMode="false"
-    tools:context=".Activity.Activity.MainActivity">
+    tools:context=".Activity.Main.MainActivity">
 
     <ImageView
         android:id="@+id/imageView2"

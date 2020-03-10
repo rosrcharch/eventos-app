@@ -1,88 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#EAECEE"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Activity.Fragments.InformacoesFragment">
+    android:layout_height="match_parent">
 
 
-    <Spinner
-        android:id="@+id/spinner_categoria"
+    <LinearLayout
+        android:background="#EAECEE"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
-        android:autofillHints="Categoria"
-        android:foregroundGravity="center_vertical"
-        android:padding="8dp"
-        android:spinnerMode="dialog" />
-
-    <EditText
-        android:id="@+id/edit_local_festa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="1"
-        android:hint="@string/local_da_festa"
-        android:inputType="textPersonName"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/edit_data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/data"
-        android:inputType="date" />
-
-    <EditText
-        android:id="@+id/edit_num_convidados"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/quantidade_de_convidados"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="12dp"
-        android:gravity="center"
-        android:text="@string/classifica_o_da_sua_festa"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <RatingBar
-        android:id="@+id/classificacao_festa"
-        style="@android:style/Widget.Holo.Light.RatingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:max="5"
-        android:numStars="5"
-        android:saveEnabled="true" />
-
-    <Button
-        android:id="@+id/buttonCriarFesta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:background="@drawable/bg_button_customizado1"
-        android:text="@string/ok" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Activity.Fragments.InformacoesFragment">
 
 
-</LinearLayout>
+        <Spinner
+            android:id="@+id/spinner_categoria"
+            style="@style/Widget.AppCompat.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:autofillHints="Categoria"
+            android:background="@drawable/tela_de_pesquisa"
+            android:foregroundGravity="center|center_horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/edit_local_festa"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/tela_de_pesquisa"
+            android:ems="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:hint="@string/local_da_festa"
+            android:inputType="textPersonName"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/edit_data"
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:layout_height="40dp"
+            android:background="@drawable/tela_de_pesquisa"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:ems="10"
+            android:hint="@string/data"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/edit_num_convidados"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/tela_de_pesquisa"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            android:hint="@string/quantidade_de_convidados"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:text="@string/classifica_o_da_sua_festa"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/classificacao_festa"
+            style="@android:style/Widget.Holo.Light.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:max="5"
+            android:numStars="5"
+            android:saveEnabled="true" />
+
+        <Button
+            android:id="@+id/buttonCriarFesta"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_button_customizado1"
+            android:elevation="20dp"
+            android:text="@string/ok" />
+
+
+    </LinearLayout>
+
+</ScrollView>

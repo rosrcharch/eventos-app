@@ -1,24 +1,23 @@
 package com.example.festaseeventos.Activity.Fragments;
 
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
-import android.text.style.MaskFilterSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
@@ -27,12 +26,12 @@ import android.widget.Toast;
 import com.example.festaseeventos.Activity.Model.Festa;
 import com.example.festaseeventos.Activity.Model.Mask;
 import com.example.festaseeventos.R;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class InformacoesFragment extends Fragment {
+
 
     private Spinner spinnerCategoria;
     private EditText editLocalFesta;
@@ -41,10 +40,13 @@ public class InformacoesFragment extends Fragment {
     private RatingBar classificacaoFesta;
     private Button botaoCriarFesta;
     private Festa festa;
-    public String categoria;
+    private String categoria;
 
-    private String[] cardViewNome = new String[] {"Festa de aniversario", "Bodas", "Datas comemorativas",
-    "Casamento", "Corporativa", "Debutante", "Escolar", "Outros"};
+
+
+    public String[] cardViewNome = new String[] {"Categoria", "Festa de aniversario", "Bodas", "Datas comemorativas",
+            "Casamento", "Corporativa", "Debutante", "Escolar", "Outros"};
+
 
 
     // Required empty public constructor
@@ -67,35 +69,35 @@ public class InformacoesFragment extends Fragment {
         botaoCriarFesta = view.findViewById(R.id.buttonCriarFesta);
         spinnerCategoria = view.findViewById(R.id.spinner_categoria);
 
+
+        //mascara de testo para formação de data
         editData.addTextChangedListener(Mask.insert("##/##/####", editData));
 
+        //Validador de data, nao funcional
         String pattern = "dd/mm/yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 
         sdf.setLenient(true);
 
+
         //Configurando o adapter e a listagem dos itens
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_dropdown_item, cardViewNome);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.select_dialog_item, cardViewNome);
+        adapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
 
         //Configuração do spinner do layout
         final Spinner informacoesSpinner = view.findViewById(R.id.spinner_categoria);
         informacoesSpinner.setAdapter(adapter);
 
-        //String data = editData.getText().toString();
-
-      /*  try {
-            Date date = sdf.parse(data);
-        } catch (ParseException e) {
-            Toast.makeText(getActivity(), "Insira uma data valida", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        }*/
 
         informacoesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                if (position > 0){
                 categoria = informacoesSpinner.getSelectedItem().toString();
+                }else {
+                    Toast.makeText(getContext(), "Nenhuma categoria selecionada", Toast.LENGTH_SHORT).show();
+                }
 
             }
 
@@ -105,12 +107,7 @@ public class InformacoesFragment extends Fragment {
             }
         });
 
-/*        editLocalFesta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "Escolha o local da sua festa", Toast.LENGTH_SHORT).show();
-            }
-        });*/
+
 
         botaoCriarFesta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +128,8 @@ public class InformacoesFragment extends Fragment {
                     Toast.makeText(getActivity(), "Insira um local de festa", Toast.LENGTH_SHORT).show();
                 }else if (editNumConvidados.getText().toString().isEmpty()){
                     Toast.makeText(getActivity(), "Isira um numero de convidados", Toast.LENGTH_SHORT).show();
+                }else if (spinnerCategoria == null) {
+                    Toast.makeText(getActivity(), "Categoria vazia", Toast.LENGTH_SHORT).show();
                 }else {
 
                     //Toast.makeText(getActivity(), "Festa Salvada", Toast.LENGTH_SHORT).show();

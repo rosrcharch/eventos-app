@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Activity.SplashScreenActivity">
+    tools:context=".Activity.Splash.Splash">
 
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/splash_festa_eventos">
-
+        app:srcCompat="@drawable/splash_festa_eventos"
+        android:scaleType="centerCrop">
 
     </ImageView>
 
