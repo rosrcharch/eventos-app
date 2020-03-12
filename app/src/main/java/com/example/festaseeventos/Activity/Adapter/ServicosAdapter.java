@@ -28,16 +28,17 @@ import com.example.festaseeventos.Activity.Interface.RecyclerViewOnItemClick;
 import com.example.festaseeventos.Activity.Model.Servicos;
 import com.example.festaseeventos.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyViewHolder> {
 
-    public static List<Servicos> listaServiço;
+    public static ArrayList<Servicos> listaServiço;
     private Context context;
     private RecyclerViewOnItemClick mRecyclerViewOnItemClick;
 
 
-    public ServicosAdapter(List<Servicos> lista, Context context) {
+    public ServicosAdapter(ArrayList<Servicos> lista, Context context) {
         this.listaServiço = lista;
         this.context = context;
 
@@ -71,22 +72,6 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
     public void setRecyclerViewOnItemClick(RecyclerViewOnItemClick r){
         mRecyclerViewOnItemClick = r;
     }
-
-    public void removeItem(int position){
-        listaServiço.remove(position);
-        notifyItemRemoved(position);
-    }
-
-    public void updateListaServicos(List<Servicos> newServicos){
-
-        listaServiço.clear();
-        listaServiço.addAll(newServicos);
-        notifyDataSetChanged();
-
-
-    }
-
-
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements OnClickListener, View.OnLongClickListener {
@@ -145,25 +130,16 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
             });
 
 
-            /*if (servicos.isEhChecado()){
-                shwOpcao.setChecked(false);
-            }else {
-                shwOpcao.setChecked(true);
-            }*/
-
         }
 
         public Dialog dialogDelete(){
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setMessage("Deseja deletar o item selecionado?")
-                    .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                    .setPositiveButton("Sim", (dialog, which) -> {
 
-                            listaServiço.remove(getAdapterPosition());
-                            notifyItemRemoved(getAdapterPosition());
+                        listaServiço.remove(getAdapterPosition());
+                        notifyItemRemoved(getAdapterPosition());
 
-                        }
                     })
                     .setNegativeButton("Não", new DialogInterface.OnClickListener() {
                         @Override
@@ -178,7 +154,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
         public void ifTable(Servicos servicos){
 
 
-            if (getAdapterPosition() ==0){
+            if (getAdapterPosition()==0){
 
                 rbOpcao1.setText("Refrigerantes");
                 rbOpcao2.setText("Sucos");

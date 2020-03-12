@@ -4,8 +4,11 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 
+import javax.inject.Inject;
+
 public class Festa {
 
+    @Inject
     public Festa() {
     }
 

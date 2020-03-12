@@ -11,36 +11,37 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.festaseeventos.Activity.Fragments.EscolhaFragment;
-import com.example.festaseeventos.Activity.Fragments.InformacoesFragment;
-import com.example.festaseeventos.Activity.Fragments.ListaFragment;
-import com.example.festaseeventos.Activity.Model.Servicos;
+import com.example.festaseeventos.Activity.di.CadastrarFestaDI.DaggerFestaComponent;
+import com.example.festaseeventos.Activity.di.CadastrarFestaDI.FestaModulo;
 import com.example.festaseeventos.R;
 import com.google.android.material.navigation.NavigationView;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
-import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 import com.squareup.picasso.Picasso;
+
+import javax.inject.Inject;
 
 public class TelaCadastrarFesta extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    @Inject
+    ViewPager viewPager;
+    @Inject
+    SmartTabLayout smartTabLayout;
+    @Inject
+    ImageView tollbarImagem;
+    @Inject
+    DrawerLayout drawerLayout;
+    @Inject
+    NavigationView navigationView;
+    @Inject
+    FragmentPagerItemAdapter adapter;
     private Toolbar toolbar;
-    private ViewPager viewPager;
-    private SmartTabLayout smartTabLayout;
-    private ImageView tollbarImagem;
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,34 +53,20 @@ public class TelaCadastrarFesta extends AppCompatActivity implements NavigationV
         toolbar.setTitle("Minha Festa");
         setSupportActionBar(toolbar);
 
-        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
-
-        viewPager = findViewById(R.id.viewPager);
-        smartTabLayout = findViewById(R.id.viewPagertab);
-        tollbarImagem = findViewById(R.id.toolbarImagem);
-        navigationView = findViewById(R.id.navView);
-        drawerLayout = findViewById(R.id.drawerLayout);
+        //Inicializador Do dagger2
+        DaggerFestaComponent.builder().festaModulo(new FestaModulo(this)).build().inject(this);
 
         navigationView.setNavigationItemSelectedListener(this);
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
         drawerLayout.addDrawerListener(toggle);
-
         toggle.syncState();
 
 
         //Configuração as abas da tela Cadastrar Festas
-        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
-                getSupportFragmentManager(),
-                FragmentPagerItems.with(this)
-                .add("Informações", InformacoesFragment.class)
-                .add("Lista", ListaFragment.class)
-                .add("Escolha", EscolhaFragment.class)
-                .create()
-        );
         viewPager.setAdapter( adapter );
         smartTabLayout.setViewPager( viewPager );
 
+        //Configuração da imagem toolbar
         Picasso.get()
                 .load("https://observatoriog.bol.uol.com.br/wordpress/wp-content/uploads/2018/09/Festa-di-SantAnna-2015-Christmas-Edition-Lake-Como-Events-2.png")
                 .into(tollbarImagem);

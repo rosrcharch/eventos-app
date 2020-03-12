@@ -1,10 +1,14 @@
 package com.example.festaseeventos.Activity.Model;
 
+
+import javax.inject.Inject;
+
 public class Servicos {
 
     private String nome;
     private boolean ehClicado = true;
 
+    @Inject
     public Servicos(){
 
     }

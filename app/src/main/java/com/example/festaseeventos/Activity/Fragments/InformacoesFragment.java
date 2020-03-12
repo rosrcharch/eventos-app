@@ -1,6 +1,7 @@
 package com.example.festaseeventos.Activity.Fragments;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,31 +19,42 @@ import androidx.fragment.app.Fragment;
 
 import com.example.festaseeventos.Activity.Model.Festa;
 import com.example.festaseeventos.Activity.Model.Mask;
+import com.example.festaseeventos.Activity.di.InformacoesFragmentDI.DaggerInformacoesComponent;
 import com.example.festaseeventos.R;
 
 import java.text.SimpleDateFormat;
 
+import javax.inject.Inject;
+
+import butterknife.BindView;
+
 public class InformacoesFragment extends Fragment {
 
 
-    private Spinner spinnerCategoria;
-    private EditText editLocalFesta;
-    private EditText editData;
-    private EditText editNumConvidados;
-    private RatingBar classificacaoFesta;
-    private Button botaoCriarFesta;
-    private Festa festa;
+    @BindView(R.id.spinner_categoria)
+    Spinner spinnerCategoria;
+    @BindView(R.id.edit_local_festa)
+    EditText editLocalFesta;
+    @BindView(R.id.edit_data)
+    EditText editData;
+    @BindView(R.id.edit_num_convidados)
+    EditText editNumConvidados;
+    @BindView(R.id.classificacao_festa)
+    RatingBar classificacaoFesta;
+    @BindView(R.id.buttonCriarFesta)
+    Button botaoCriarFesta;
+    @Inject
+    Festa novaFesta;
+    @Inject
+    String[] cardViewNome;
     private String categoria;
-
-
-
-    public String[] cardViewNome = new String[] {"Categoria", "Festa de aniversario", "Bodas", "Datas comemorativas",
-            "Casamento", "Corporativa", "Debutante", "Escolar", "Outros"};
 
 
 
     // Required empty public constructor
     public InformacoesFragment() {
+
+        DaggerInformacoesComponent.create().inject(this);
 
     }
 
@@ -53,23 +65,12 @@ public class InformacoesFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.fragment_informacoes, container, false);
 
-
-        editLocalFesta = view.findViewById(R.id.edit_local_festa);
-        editData = view.findViewById(R.id.edit_data);
-        editNumConvidados = view.findViewById(R.id.edit_num_convidados);
-        classificacaoFesta = view.findViewById(R.id.classificacao_festa);
         botaoCriarFesta = view.findViewById(R.id.buttonCriarFesta);
-        spinnerCategoria = view.findViewById(R.id.spinner_categoria);
+        editData = view.findViewById(R.id.edit_data);
 
 
         //mascara de testo para formação de data
         editData.addTextChangedListener(Mask.insert("##/##/####", editData));
-
-        //Validador de data, nao funcional
-        String pattern = "dd/mm/yyyy";
-        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-
-        sdf.setLenient(true);
 
 
         //Configurando o adapter e a listagem dos itens
@@ -101,39 +102,34 @@ public class InformacoesFragment extends Fragment {
 
 
 
-        botaoCriarFesta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        botaoCriarFesta.setOnClickListener(v -> {
 
-                Festa novaFesta = new Festa();
+            if (editData.getText().toString().isEmpty()){
+                Toast.makeText(getActivity(), "Isira uma data", Toast.LENGTH_SHORT).show();
+            }else if (editLocalFesta.getText().toString().isEmpty()){
+                Toast.makeText(getActivity(), "Insira um local de festa", Toast.LENGTH_SHORT).show();
+            }else if (editNumConvidados.getText().toString().isEmpty()){
+                Toast.makeText(getActivity(), "Isira um numero de convidados", Toast.LENGTH_SHORT).show();
+            }else if (spinnerCategoria == null) {
+                Toast.makeText(getActivity(), "Categoria vazia", Toast.LENGTH_SHORT).show();
+            }else {
+
+
                 novaFesta.setDataFesta(editData);
                 novaFesta.setLocalFesta(editLocalFesta);
                 novaFesta.setQuantidadeConvidados(editNumConvidados);
                 novaFesta.setClassificacaoFesta(classificacaoFesta);
                 novaFesta.setTipoFesta(spinnerCategoria);
 
-                Log.d("Data: ", novaFesta.getDataFesta().getText().toString());
-
-                if (editData.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(), "Isira uma data", Toast.LENGTH_SHORT).show();
-                }else if (editLocalFesta.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(), "Insira um local de festa", Toast.LENGTH_SHORT).show();
-                }else if (editNumConvidados.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(), "Isira um numero de convidados", Toast.LENGTH_SHORT).show();
-                }else if (spinnerCategoria == null) {
-                    Toast.makeText(getActivity(), "Categoria vazia", Toast.LENGTH_SHORT).show();
-                }else {
-
-                    //Toast.makeText(getActivity(), "Festa Salvada", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getActivity(), "festa salva:  "
-                            + "Categoria: " + categoria + "\n"
-                            + "Local: " + editLocalFesta.getText().toString() + "\n"
-                            + "DATA: " + editData.getText().toString() + "\n"
-                            + "Numero de convidados: " + editNumConvidados.getText().toString() + "\n"
-                            + "Sua classificação: " + classificacaoFesta.getRating(), Toast.LENGTH_LONG).show();
-                }
-
+                //Toast.makeText(getActivity(), "Festa Salvada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "festa salva:  "
+                        + "Categoria: " + categoria + "\n"
+                        + "Local: " + editLocalFesta.getText().toString() + "\n"
+                        + "DATA: " + editData.getText().toString() + "\n"
+                        + "Numero de convidados: " + editNumConvidados.getText().toString() + "\n"
+                        + "Sua classificação: " + classificacaoFesta.getRating(), Toast.LENGTH_LONG).show();
             }
+
         });
 
         // Inflate the layout for this fragment
