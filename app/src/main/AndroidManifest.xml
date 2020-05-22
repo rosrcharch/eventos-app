@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Activity.Main.MainActivity" />
         <activity
             android:name=".Activity.Activity.TelaOferecerServico"

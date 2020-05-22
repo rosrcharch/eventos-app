@@ -74,7 +74,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements OnClickListener, View.OnLongClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements OnClickListener{
 
         TextView servico;
         ImageView btnOpcao;
@@ -100,7 +100,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
             edtOpcao = itemView.findViewById(R.id.edtOpcao);
 
             btnOpcao.setOnClickListener(this);
-            itemView.setOnLongClickListener(this);
+            /*itemView.setOnLongClickListener(this);*/
 
         }
 
@@ -132,7 +132,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
 
         }
 
-        public Dialog dialogDelete(){
+       /* public Dialog dialogDelete(){
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setMessage("Deseja deletar o item selecionado?")
                     .setPositiveButton("Sim", (dialog, which) -> {
@@ -149,7 +149,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
                     });
 
             return builder.create();
-        }
+        }*/
 
         public void ifTable(Servicos servicos){
 
@@ -350,13 +350,13 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.MyView
 
         }
 
-        @Override
+       /* @Override
         public boolean onLongClick(View v) {
-                dialogDelete().show();
+                *//*dialogDelete().show();*//*
                 Toast.makeText(context, "click longo ", Toast.LENGTH_SHORT).show();
 
             return true;
-        }
+        }*/
 
 
     }

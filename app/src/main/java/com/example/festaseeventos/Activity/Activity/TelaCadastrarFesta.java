@@ -68,7 +68,7 @@ public class TelaCadastrarFesta extends AppCompatActivity implements NavigationV
 
         //Configuração da imagem toolbar
         Picasso.get()
-                .load("https://observatoriog.bol.uol.com.br/wordpress/wp-content/uploads/2018/09/Festa-di-SantAnna-2015-Christmas-Edition-Lake-Como-Events-2.png")
+                .load("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVjThamSVt6APekWR15NfyHEMgx3oCuhTimSPN2-_Ne13bUqJR&usqp=CAU")
                 .into(tollbarImagem);
 
 

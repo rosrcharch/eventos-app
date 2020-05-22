@@ -19,7 +19,6 @@ import android.widget.Toast;
 import com.example.festaseeventos.Activity.Adapter.ServicosAdapter;
 import com.example.festaseeventos.Activity.Interface.RecyclerViewOnItemClick;
 import com.example.festaseeventos.Activity.Model.Servicos;
-
 import com.example.festaseeventos.Activity.di.ListaFragmentDI.DaggerApiComponent;
 import com.example.festaseeventos.Activity.di.ListaFragmentDI.ListaModulo;
 import com.example.festaseeventos.R;

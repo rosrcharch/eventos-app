@@ -1,5 +1,6 @@
 package com.example.festaseeventos.Activity.di.InformacoesFragmentDI;
 
+import com.example.festaseeventos.Activity.Fragments.EscolhaFragment;
 import com.example.festaseeventos.Activity.Fragments.InformacoesFragment;
 
 import dagger.Component;
@@ -8,4 +9,6 @@ import dagger.Component;
 public interface InformacoesComponent {
 
     void inject(InformacoesFragment informacoesFragment);
+
+    void inject(EscolhaFragment escolhaFragment);
 }
