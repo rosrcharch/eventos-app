@@ -18,6 +18,6 @@ public interface FestaApi {
     @GET("/festa/{id}")
     Call<Festa> getListaFesta(@Path("id")int id);
 
-    @POST("/festa")
+    @POST("festa")
     Call<Festa> setListaFesta(@Body Festa festa);
 }

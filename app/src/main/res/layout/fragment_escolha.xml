@@ -7,36 +7,97 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Tipo" />
+
+    <TextView
         android:id="@+id/tipo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="test"
-        android:padding="10dp"
-        android:textSize="20sp"/>
+        android:layout_marginLeft="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#929191" />
 
     <TextView
-        android:id="@+id/data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="test"
-        android:padding="10dp"
-        android:textSize="20sp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Local" />
 
     <TextView
         android:id="@+id/local"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="test"
-        android:padding="10dp"
-        android:textSize="20sp"/>
+        android:layout_marginLeft="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#929191" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Data" />
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#929191" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="Convidados estimados" />
 
     <TextView
         android:id="@+id/convidados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="test"
-        android:padding="10dp"
-        android:textSize="20sp"/>
+        android:layout_marginLeft="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="#929191" />
 
 </LinearLayout>
 

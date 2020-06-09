@@ -15,13 +15,13 @@ public class Festa {
     }
 
     @SerializedName("tipo")
-    private String tipoFesta;
+    String tipoFesta;
     @SerializedName("local")
-    private String localFesta;
+    String localFesta;
     @SerializedName("data")
-    private String dataFesta;
+    String dataFesta;
     @SerializedName("convidados")
-    private String quantidadeConvidados;
+    String quantidadeConvidados;
 
     public String getTipoFesta() {
         return tipoFesta;

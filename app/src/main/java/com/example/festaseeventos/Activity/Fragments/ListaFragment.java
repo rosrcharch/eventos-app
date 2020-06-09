@@ -36,7 +36,7 @@ public class ListaFragment extends Fragment implements RecyclerViewOnItemClick {
     @Inject
     RecyclerView recyclerView;
     @BindView(R.id.buttonOpcoes)
-     Button btnOpcao;
+    Button btnOpcao;
     @BindView(R.id.linearImage)
     LinearLayout linOpcao;
     @Inject
@@ -58,7 +58,6 @@ public class ListaFragment extends Fragment implements RecyclerViewOnItemClick {
         View view = inflater.inflate(R.layout.fragment_lista, container, false);
 
         DaggerApiComponent.builder().listaModulo(new ListaModulo(view)).build().inject(this);
-        ButterKnife.bind(this, view);
 
         //tamanho da lista inalteravel pelo seu conteudo
         recyclerView.setHasFixedSize(true);
